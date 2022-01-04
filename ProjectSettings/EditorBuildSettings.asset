@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Astra Knight Level 0 Title Menu.unity
+    guid: 6089608a8c646be48aeb77bf017394b4
+  - enabled: 1
+    path: Assets/Scenes/Astra Knight Level 1 (Done).unity
+    guid: beda3f8bfe167c04dbc81d49125cd58a
+  - enabled: 1
+    path: Assets/Scenes/Astra Knight Level 2 Boss.unity
+    guid: 9c7d7561044b9f3419ac4bac6d972f8f
+  - enabled: 1
+    path: Assets/Scenes/Astra Knight Level 3 CutScene.unity
+    guid: f46fab77fc5b6c6439cf9bfcf7df869d
+  - enabled: 1
+    path: Assets/Scenes/Astra Knight Level 4 Credits.unity
+    guid: 6e5370f8186fb3043a894317d37b4686
+  m_configObjects: {}
