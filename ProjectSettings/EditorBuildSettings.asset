@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Astra Knight Level 0 Title Menu.unity
+    path: Assets/Scenes/Astra Knight Level 0 Title Menu (Done).unity
     guid: 6089608a8c646be48aeb77bf017394b4
   - enabled: 1
     path: Assets/Scenes/Astra Knight Level 1 (Done).unity
