@@ -290,11 +290,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed13a7ab5866ea4b8a7b6f8c15da2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elenor1: {fileID: 890976080}
-  Astra1: {fileID: 1568557054}
-  Astra2: {fileID: 0}
-  elenor2: {fileID: 0}
-  Astra3: {fileID: 0}
+  elenor1: {fileID: 890976079}
+  astra1: {fileID: 1568557052}
+  astra2: {fileID: 603819485}
+  elenor2: {fileID: 1896827836}
+  astra3: {fileID: 1430771614}
 --- !u!114 &313767797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2500,6 +2500,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3865270948241690921, guid: 998ae26008d421a4d85b12cad3c7f5c1, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 2129056535}
+    - target: {fileID: 3865270948241690921, guid: 998ae26008d421a4d85b12cad3c7f5c1, type: 3}
       propertyPath: sensor
       value: 
       objectReference: {fileID: 1813419110}
@@ -2665,6 +2669,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: level 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6342677998295003366, guid: c3da4b39905f1b346bcbeb99443c438c, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 2129056535}
     - target: {fileID: 6342677998295003366, guid: c3da4b39905f1b346bcbeb99443c438c, type: 3}
       propertyPath: sensor
       value: 
@@ -2854,9 +2862,17 @@ PrefabInstance:
       value: level 4
       objectReference: {fileID: 0}
     - target: {fileID: 9193051409201352433, guid: 1bd73be3a85df7d4487035bef2ac86c2, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 2129056535}
+    - target: {fileID: 9193051409201352433, guid: 1bd73be3a85df7d4487035bef2ac86c2, type: 3}
       propertyPath: sensor
       value: 
       objectReference: {fileID: 1813419110}
+    - target: {fileID: 9193051409201352433, guid: 1bd73be3a85df7d4487035bef2ac86c2, type: 3}
+      propertyPath: sensor1
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9193051409201352433, guid: 1bd73be3a85df7d4487035bef2ac86c2, type: 3}
       propertyPath: act1Player
       value: 

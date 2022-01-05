@@ -80,7 +80,6 @@ public class MainPlayerController : MonoBehaviour
     {
         isJumping = false;
         isOnGround = true;
-        Debug.Log("On Ground");
 
         // Runs animation for running while player is grounded.
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
@@ -99,7 +98,6 @@ public class MainPlayerController : MonoBehaviour
     {
         isJumping = true;
         isOnGround = false;
-        Debug.Log("Is off ground");
     }
 
     private IEnumerator WaitForSec()
