@@ -12,6 +12,7 @@ TagManager:
   - level 3
   - level 4
   - sensor 2
+  - Door
   layers:
   - Default
   - TransparentFX

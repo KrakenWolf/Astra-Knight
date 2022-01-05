@@ -20,15 +20,11 @@ public class GameManager : MonoBehaviour
     private GameObject bossPlayer;
     private GameObject cutscenePlayer;
 
-    private void Awake()
-    {
-        Button button = startButton.GetComponent<Button>();
-        Button button1 = exitButton.GetComponent<Button>();
-    }
+    
     // Start is called before the first frame update
     void Start()
     {
-        Object.DontDestroyOnLoad(this.gameObject);
+        
     }
 
     public void LoadLevel()

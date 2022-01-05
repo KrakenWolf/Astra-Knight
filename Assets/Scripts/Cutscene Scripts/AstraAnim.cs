@@ -15,11 +15,13 @@ public class AstraAnim : MonoBehaviour
     public GameObject act1Player;
     public GameObject act2Player;
     public GameObject act3Player;
+    public GameObject door;
 
     // Start is called before the first frame update
     void Start()
     {
         animCutscene = GetComponent<Animator>();
+        StartCoroutine("DoorEffect");
     }
 
     // Update is called once per frame
@@ -61,5 +63,12 @@ public class AstraAnim : MonoBehaviour
             act2Player.SetActive(false);
             act3Player.SetActive(true);
         }
+    }
+
+    IEnumerator DoorEffect()
+    {
+        yield return new WaitForSeconds(3.3f);
+        door.SetActive(false);
+        StopCoroutine("DoorEffect");
     }
 }
