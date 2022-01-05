@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthController : BossController
+public class BossHealthController : BossController
 {
     public float health;
     public float maxHealth;

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private Button startButton;
     private Button exitButton;
     private Button backToMain;
+    private Button retry;
     private GameObject Trigger;
 
     private GameObject mainPlayer1;
@@ -60,5 +61,10 @@ public class GameManager : MonoBehaviour
     public void BackToMain()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void RetryLevel()
+    {
+        SceneManager.LoadScene(2);
     }
 }
