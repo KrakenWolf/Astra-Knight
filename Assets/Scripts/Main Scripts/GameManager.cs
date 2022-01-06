@@ -11,27 +11,14 @@ public class GameManager : MonoBehaviour
 {
 
     public GameManager gameManager;
-    private Button startButton;
-    private Button exitButton;
     private Button backToMain;
+    private Button exitButton;
     private Button retry;
     private GameObject Trigger;
 
     private GameObject mainPlayer1;
     private GameObject bossPlayer;
     private GameObject cutscenePlayer;
-
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    public void LoadLevel()
-    {
-        SceneManager.LoadScene(1);
-    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -49,15 +36,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Exit()
-    {
-#if UNITY_EDITOR
-        EditorApplication.ExitPlaymode();
-#else
-        Application.Quit(); // original code to quit Unity player
-#endif
-    }
-
     public void BackToMain()
     {
         SceneManager.LoadScene(0);
@@ -66,5 +44,16 @@ public class GameManager : MonoBehaviour
     public void RetryLevel()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void Exit()
+    {
+        {
+#if UNITY_EDITOR
+            EditorApplication.ExitPlaymode();
+#else
+        Application.Quit(); // original code to quit Unity player
+#endif
+        }
     }
 }
