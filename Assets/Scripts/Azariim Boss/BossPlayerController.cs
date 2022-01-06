@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BossPlayerController : MonoBehaviour
 {
@@ -13,6 +15,15 @@ public class BossPlayerController : MonoBehaviour
     // game object for the guns effects.
     public GameObject flash;
     public GameObject shot;
+
+    //Health System
+    public float health;
+    public float maxHealth = 100f;
+
+    float damge = 10f;
+
+    public GameObject playerHealth;
+    public Slider playerSlider;
 
     // These are float variables that provide the base for all player movement interactions.
     private float speed = 5.0f;
@@ -45,6 +56,9 @@ public class BossPlayerController : MonoBehaviour
         startPos = this.transform.position;
         // calls the animator component attatched to the object.
         anim = GetComponent<Animator>();
+
+        //Health System
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -55,6 +69,8 @@ public class BossPlayerController : MonoBehaviour
         RestartPlayerPos();
         Jump();
         FireTheLazaaa();
+        // Health System
+        ControlHealth();
     }
     // Moves the player
     void MovePlayer()
@@ -98,6 +114,13 @@ public class BossPlayerController : MonoBehaviour
             anim.SetBool("Running", false);
         }
 
+        //Health System
+        if (collision.gameObject.tag == "Boss")
+        {
+            Damage();
+        }
+
+
     }
 
     // This will let the game know the player has left the ground.
@@ -119,7 +142,7 @@ public class BossPlayerController : MonoBehaviour
 
     private IEnumerator WaitForSecgun()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1f);
         flash.SetActive(false);
         shot.SetActive(false);
         StopCoroutine("WaitForSecgun");
@@ -146,5 +169,37 @@ public class BossPlayerController : MonoBehaviour
             shot.SetActive(true);
             StartCoroutine("WaitForSecgun");
         }
+    }
+
+    void ControlHealth()
+    {
+        playerSlider.value = CalculateHealth();
+
+        if (health < maxHealth)
+        {
+            playerHealth.SetActive(true);
+        }
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(5);
+        }
+
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+
+        float CalculateHealth()
+        {
+            return health / maxHealth;
+        }
+    }
+    //Player Health
+    void Damage()
+    {
+        health -= damge;
+        Debug.Log("Hit");
+
     }
 }
