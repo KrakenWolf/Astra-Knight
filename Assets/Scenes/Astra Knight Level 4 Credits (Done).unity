@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18a08042f8cfa246a123605cfc2f433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerScript: {fileID: 3621747605545195575, guid: 8cb5bc8edb2955b499eaed49e3918d24, type: 3}
   gameManager: {fileID: 6035349240571854018, guid: cd1abb4d8c1da41419b9734abcdf2c68, type: 3}
 --- !u!1 &249019015
 GameObject:
@@ -716,7 +717,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 200520181}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: BackToMain
+        m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

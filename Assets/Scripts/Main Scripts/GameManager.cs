@@ -9,17 +9,20 @@ using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
+    public TimerScript TimerScript;
+    public static bool stopwatchActive;
 
     public GameManager gameManager;
-    private Button backToMain;
-    private Button exitButton;
-    private Button retry;
     private GameObject Trigger;
 
     private GameObject mainPlayer1;
     private GameObject bossPlayer;
     private GameObject cutscenePlayer;
 
+    private void Start()
+    {
+        
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("level 1"))
@@ -29,6 +32,8 @@ public class GameManager : MonoBehaviour
         if (other.gameObject.CompareTag("level 2"))
         {
             SceneManager.LoadScene(3);
+            //PlayerPrefs.SetFloat("Best Time", currentTime);
+            //Debug.Log("Saved");
         }
         if (other.gameObject.CompareTag("level 4"))
         {
@@ -36,9 +41,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void BackToMain()
+    public void BackToMenu()
     {
-        SceneManager.LoadScene(0);
+       SceneManager.LoadScene(0);
+       stopwatchActive = false;
     }
 
     public void RetryLevel()
@@ -46,8 +52,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void StartGame()
+    {
+        stopwatchActive = true;
+        SceneManager.LoadScene(1);
+        TimerScript.timerCanvas.SetActive(true);
+    }
+
     public void Exit()
     {
+
         {
 #if UNITY_EDITOR
             EditorApplication.ExitPlaymode();
@@ -56,4 +70,5 @@ public class GameManager : MonoBehaviour
 #endif
         }
     }
+
 }

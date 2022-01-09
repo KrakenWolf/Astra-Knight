@@ -5,65 +5,79 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
 
-public class TimerScript : GameManager
+[Serializable]public class TimerScript : GameManager
 {
-    public GameObject timer;
+    public GameObject timerCanvas;
     private Button startButton;
 
     public bool level1;
 
     //Timer
-    bool stopwatchActive = false;
-    float currentTime;
-    //public Text currentText;
-
-    //Score
-    int Score;
-    public Text scoreText;
-    public float multiplier;
+    public static float currentTime;
+    public float bestTime;
+    public Text timerText;
+    public Text bestText;
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-        if (gameObject == null)
+        timerCanvas = this.gameObject;
+
+        if (this.timerCanvas)
         {
-            Destroy(gameObject);
+            DontDestroyOnLoad(this);
         }
     }
 
     private void Start()
     {
-        currentTime = 0;
+        if (currentTime < bestTime)
+        {
+            bestText.text = PlayerPrefs.GetFloat("Best Time").ToString();
+        }
+        if (currentTime > bestTime)
+        {
+            bestText = timerText;
+        }
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         TimingIt();
     }
 
     void TimingIt()
     {
+        TimeSpan time = TimeSpan.FromSeconds(currentTime);
+
         if (stopwatchActive == true)
         {
             currentTime = currentTime + Time.deltaTime;
+            
+            timerText.text = time.ToString(@"mm\:ss\:ff");
         }
-
-        Score = Mathf.RoundToInt(currentTime * multiplier);
-        scoreText.text = Score.ToString();
-        TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        //currentText.text = time.ToString(@"mm\:ss\:ff");
     }
 
-    public void StartGame()
+    public void Best()
     {
-        stopwatchActive = true;
-        SceneManager.LoadScene(1);
-        timer.SetActive(true);
+        bestText.text = currentTime.ToString();
 
+        if(currentTime > PlayerPrefs.GetFloat("Best Time"))
+        {
+            PlayerPrefs.SetFloat("Best Time", currentTime);
+            bestText.text = currentTime.ToString();
+        }
     }
 
-    private void OnApplicationQuit()
+
+
+    public void RestetScore()
     {
-        PlayerPrefs.SetInt("Best Score", Score);
+        PlayerPrefs.DeleteAll();
+        TimerScript.bestText.text = "0";
+    }
+
+    public void SaveTime()
+    {
+        PlayerPrefs.SetFloat("Best Time", currentTime);
     }
 }

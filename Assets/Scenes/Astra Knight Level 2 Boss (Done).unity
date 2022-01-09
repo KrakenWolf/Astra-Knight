@@ -1243,6 +1243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18a08042f8cfa246a123605cfc2f433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerScript: {fileID: 0}
   gameManager: {fileID: 6035349240571854018, guid: cd1abb4d8c1da41419b9734abcdf2c68, type: 3}
 --- !u!114 &486084687
 MonoBehaviour:
@@ -1485,9 +1486,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 486084686}
+      - m_Target: {fileID: 6035349240571854018, guid: cd1abb4d8c1da41419b9734abcdf2c68, type: 3}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: BackToMain
+        m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4335,7 +4336,7 @@ PrefabInstance:
     - target: {fileID: 3487711829280650490, guid: 9f2aeffd9540011418a3a5846d48af6f, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: f4561b10d0296d5469c58e48345f88b3, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3495423492599314610, guid: 9f2aeffd9540011418a3a5846d48af6f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4600,4 +4601,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18a08042f8cfa246a123605cfc2f433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerScript: {fileID: 0}
   gameManager: {fileID: 0}
