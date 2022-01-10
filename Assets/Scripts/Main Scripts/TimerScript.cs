@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 [Serializable]public class TimerScript : GameManager
 {
+    public static GameManager instance;
+
     public GameObject timerCanvas;
     private Button startButton;
 
@@ -20,11 +22,16 @@ using UnityEngine.SceneManagement;
 
     private void Awake()
     {
-        timerCanvas = this.gameObject;
+        
 
-        if (this.timerCanvas)
+        if (instance != null)
         {
-            DontDestroyOnLoad(this);
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(timerCanvas);
         }
     }
 
@@ -72,7 +79,7 @@ using UnityEngine.SceneManagement;
 
     public void RestetScore()
     {
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("Best Time");
         TimerScript.bestText.text = "0";
     }
 

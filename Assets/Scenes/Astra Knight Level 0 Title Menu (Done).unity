@@ -2114,8 +2114,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6035349240571854018, guid: cd1abb4d8c1da41419b9734abcdf2c68, type: 3}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 3621747605545195575, guid: 8cb5bc8edb2955b499eaed49e3918d24, type: 3}
+        m_TargetAssemblyTypeName: TimerScript, Assembly-CSharp
         m_MethodName: RestetScore
         m_Mode: 1
         m_Arguments:
