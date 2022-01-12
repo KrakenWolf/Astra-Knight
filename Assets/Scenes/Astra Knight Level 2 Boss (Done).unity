@@ -3410,7 +3410,7 @@ MonoBehaviour:
   maxHealth: 100
   azariimHealth: {fileID: 486084685}
   azariimSlider: {fileID: 572088701}
-  speed: 3
+  speed: 2.5
   rotationSpeed: 5
   player: {fileID: 4136377286053548416}
 --- !u!1001 &1614763811
@@ -4336,7 +4336,7 @@ PrefabInstance:
     - target: {fileID: 3487711829280650490, guid: 9f2aeffd9540011418a3a5846d48af6f, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 13400000, guid: f4561b10d0296d5469c58e48345f88b3, type: 2}
     - target: {fileID: 3495423492599314610, guid: 9f2aeffd9540011418a3a5846d48af6f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4417,6 +4417,10 @@ PrefabInstance:
     - target: {fileID: 4061430815188046271, guid: 8b29605d963218248be3fb25939ed91a, type: 3}
       propertyPath: m_ReceiveShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061430815360624235, guid: 8b29605d963218248be3fb25939ed91a, type: 3}
+      propertyPath: m_Mass
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4061430815360624235, guid: 8b29605d963218248be3fb25939ed91a, type: 3}
       propertyPath: m_Constraints

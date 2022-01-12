@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Astra Knight Game Over (Done).unity
     guid: ff2257d47aa6f3e468e41caaca9bb52c
+  - enabled: 1
+    path: Assets/Scenes/Astra Knight Controls.unity
+    guid: 2f7a01a32f33a6b4abb4f4db32f02003
   m_configObjects: {}
